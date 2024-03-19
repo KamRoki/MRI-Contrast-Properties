@@ -3,6 +3,8 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
+import openpyxl
+import pyarrow
 
 # -------------------------------------------------------------------------
 # DATA (Before that, create Excel file)
@@ -12,7 +14,7 @@ savename = 'Non-filtred and sonificated CeO2-Gd-PAA'
 init_concentration = 27.7  # [mM]
 rangeT1 = 'A9:AB15'
 rangeT2 = 'A9:AB30'
-do_relaxivity = 1
+do_relaxivity = 0
 # -------------------------------------------------------------------------
 dataBaseT2 = pd.read_excel(data_path + scan_name + '/sample_1_t2_map.xlsx', sheet_name=0, usecols=rangeT2)
 TE = dataBaseT2.iloc[:, 0]  # [ms]
